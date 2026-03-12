@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom styles for HS Code table */
+.hs-table {
+  @apply w-full border-collapse text-sm;
+}
+
+.hs-table thead th {
+  @apply sticky top-0 bg-[#1e8449] text-white px-3 py-2 text-left font-semibold whitespace-nowrap z-10 border border-green-700;
+}
+
+.hs-table tbody tr:nth-child(even) {
+  @apply bg-[#f8f9fa];
+}
+
+.hs-table tbody tr:nth-child(odd) {
+  @apply bg-white;
+}
+
+.hs-table tbody tr:hover {
+  @apply bg-blue-50 cursor-pointer;
+}
+
+.hs-table tbody td {
+  @apply px-3 py-2 border border-gray-200;
+}
+
+.hs-table tbody tr.is-header {
+  @apply bg-[#fef9e7];
+}
+
+.hs-table tbody tr.is-header td {
+  @apply font-bold text-gray-800;
+}
+
+mark {
+  @apply bg-yellow-200 text-gray-900 rounded px-0.5;
+}
+
+/* Skeleton loading animation */
+@keyframes skeleton-loading {
+  0% {
+    background-color: #e2e8f0;
+  }
+  100% {
+    background-color: #f8fafc;
+  }
+}
+
+.skeleton {
+  animation: skeleton-loading 1s linear infinite alternate;
+  @apply rounded;
+}

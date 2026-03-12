@@ -1,0 +1,50 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model HsCode {
+  id               Int      @id @default(autoincrement())
+  maHang           String   @db.VarChar(20)
+  moTaViet         String?  @db.Text
+  donViTinh        String?  @db.VarChar(50)
+  nkTt             String?  @db.VarChar(20)
+  nkUuDai          String?  @db.VarChar(20)
+  vat              String?  @db.VarChar(20)
+  acfta            String?  @db.VarChar(20)
+  atiga            String?  @db.VarChar(20)
+  aicep            String?  @db.VarChar(20)
+  vjepa            String?  @db.VarChar(20)
+  akfta            String?  @db.VarChar(20)
+  aanzfta          String?  @db.VarChar(20)
+  aifta            String?  @db.VarChar(20)
+  vkfta            String?  @db.VarChar(20)
+  vcfta            String?  @db.VarChar(20)
+  vneaeu           String?  @db.VarChar(20)
+  cptpp            String?  @db.VarChar(20)
+  ahkfta           String?  @db.VarChar(20)
+  vncu             String?  @db.VarChar(20)
+  evfta            String?  @db.VarChar(20)
+  ukvfta           String?  @db.VarChar(20)
+  vifta            String?  @db.VarChar(20)
+  ttDb             String?  @db.VarChar(20)
+  xk               String?  @db.VarChar(20)
+  xkCpTpp          String?  @db.VarChar(20)
+  xkEv             String?  @db.VarChar(20)
+  xkUkv            String?  @db.VarChar(20)
+  thueBvMt         String?  @db.VarChar(20)
+  chinhSachMatHang String?  @db.Text
+  giamVat          String?  @db.VarChar(20)
+  isHeader         Boolean  @default(false)
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+
+  @@index([maHang])
+}
